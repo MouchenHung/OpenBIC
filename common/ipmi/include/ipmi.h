@@ -69,6 +69,7 @@ void pal_OEM_SET_GPIO(ipmi_msg *msg);
 void pal_OEM_SENSOR_POLL_EN(ipmi_msg *msg);
 void pal_OEM_FW_UPDATE(ipmi_msg *msg);
 void pal_OEM_GET_FW_VERSION(ipmi_msg *msg);
+void pal_OEM_GET_POST_CODE(ipmi_msg *msg);
 void pal_OEM_GET_SET_GPIO(ipmi_msg *msg);
 void pal_OEM_SET_SYSTEM_GUID(ipmi_msg *msg);
 void pal_OEM_I2C_DEV_SCAN(ipmi_msg *msg);
