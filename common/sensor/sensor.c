@@ -80,18 +80,8 @@ bool sensor_read(uint8_t sensor_num, int *reading) {
       if (status)
         return true;
       break;
-    case type_pch:
-      status = pal_pch_read(sensor_num, reading);
-      if (status)
-        return true;
-      break;
     case type_hsc:
       status = pal_hsc_read(sensor_num, reading);
-      if (status)
-        return true;
-      break;
-    case type_nvme:
-      status = pal_nvme_read(sensor_num, reading);
       if (status)
         return true;
       break;

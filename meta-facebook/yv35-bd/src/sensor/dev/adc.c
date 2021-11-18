@@ -1,5 +1,3 @@
-/*
-
 #include <stdio.h>
 #include "sensor.h"
 #include "sensor_def.h"
@@ -100,15 +98,10 @@ bool pal_adc_read(uint8_t sensor_num, int *reading) {
   int val = 1;
   int ret = adc_read_mv(chip, number, &val);
   if ( ret ){
-    if( sensor_num == SENSOR_NUM_VOL_BAT3V) {
-      gpio_set(A_P3V_BAT_SCALED_EN_R, GPIO_HIGH);
-      osDelay(1);
-      adc_read_mv(chip, number, &val);
-      val = val * sensor_config[snrcfg_sensor_num].arg0 / sensor_config[snrcfg_sensor_num].arg1;
-      gpio_set(A_P3V_BAT_SCALED_EN_R, GPIO_LOW);
-    }else{
-      val = val * sensor_config[snrcfg_sensor_num].arg0 / sensor_config[snrcfg_sensor_num].arg1;
-		}
+    val = val * sensor_config[snrcfg_sensor_num].arg0 / sensor_config[snrcfg_sensor_num].arg1;
+	  if ( sensor_num == SENSOR_NUM_CUR_P12V_FAN ) {
+      val = (float)val / 0.22 / 0.665;
+    }
     *reading = (cal_MBR(sensor_num, val) / 1000) & 0xFF;
     sensor_config[snrcfg_sensor_num].cache = *reading;
     sensor_config[snrcfg_sensor_num].cache_status = SNR_READ_SUCCESS;
@@ -117,5 +110,3 @@ bool pal_adc_read(uint8_t sensor_num, int *reading) {
     return false;
   }
 }
-
-*/

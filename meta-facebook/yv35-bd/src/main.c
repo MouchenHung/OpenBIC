@@ -20,8 +20,7 @@ void device_init() {
 }
 
 void set_sys_status() {
-  //gpio_set(FM_SPI_PCH_MASTER_SEL_R, GPIO_LOW);
-  //gpio_set(BIC_READY, GPIO_HIGH);
+  gpio_set(BIC_READY_R, GPIO_HIGH);
 }
 
 void main(void)
@@ -33,11 +32,11 @@ void main(void)
   util_init_I2C();
 
   //sensor_init();
-  //FRU_init();
+  FRU_init();
   ipmi_init();
-  // usb_dev_init();
-  // device_init();
-  // set_sys_status();
+  usb_dev_init();
+  device_init();
+  set_sys_status();
 }
 
 #define DEF_PROJ_GPIO_PRIORITY 61

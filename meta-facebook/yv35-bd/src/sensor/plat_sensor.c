@@ -19,13 +19,14 @@ snr_cfg plat_sensor_config[] = {
   {SENSOR_NUM_TEMP_TMP75_IN          , type_tmp75     , i2c_bus1      , tmp75_in_addr           , tmp75_tmp_offset  , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_TEMP_TMP75_OUT         , type_tmp75     , i2c_bus1      , tmp75_out_addr          , tmp75_tmp_offset  , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
                                                                                                                                                                  
-  // adc voltage                                                                                                                                                 
-  {SENSOR_NUM_VOL_P5V_STBY           , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
-  {SENSOR_NUM_VOL_P12V_STBY          , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
-  {SENSOR_NUM_VOL_P3V3_STBY          , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
-  {SENSOR_NUM_VOL_P5V_USB            , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
-  {SENSOR_NUM_VOL_P1V2_BIC_STBY      , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
-  {SENSOR_NUM_VOL_P1V0_STBY          , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
+  // adc                                                                                                                                                 
+  {SENSOR_NUM_VOL_P5V_STBY           , type_adc       , adc_port1     , NULL                    , NULL              , stby_access      , 736   , 200   , 0      , SNR_INIT_STATUS},
+  {SENSOR_NUM_VOL_P12V_STBY          , type_adc       , adc_port0     , NULL                    , NULL              , stby_access      , 178   , 20    , 0      , SNR_INIT_STATUS},
+  {SENSOR_NUM_VOL_P3V3_STBY          , type_adc       , adc_port2     , NULL                    , NULL              , stby_access      , 487   , 200   , 0      , SNR_INIT_STATUS},
+  {SENSOR_NUM_VOL_P5V_USB            , type_adc       , adc_port7     , NULL                    , NULL              , stby_access      , 736   , 200   , 0      , SNR_INIT_STATUS},
+  {SENSOR_NUM_VOL_P1V2_BIC_STBY      , type_adc       , adc_port5     , NULL                    , NULL              , stby_access      , 1     , 1     , 0      , SNR_INIT_STATUS},
+  {SENSOR_NUM_VOL_P1V0_STBY          , type_adc       , adc_port4     , NULL                    , NULL              , stby_access      , 1     , 1     , 0      , SNR_INIT_STATUS},
+  {SENSOR_NUM_CUR_P12V_FAN           , type_adc       , adc_port6     , NULL                    , NULL              , stby_access      , 1     , 1     , 0      , SNR_INIT_STATUS},
 
   // medusa board
   {SENSOR_NUM_VOL_MEDUSA_12V_IN      , type_medusa    , i2c_bus2      , medusa_addr             , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
