@@ -2,14 +2,7 @@
 &pwm {
 	status = "okay";
 	pinctrl-0 = <&pinctrl_pwm0_default &pinctrl_pwm1_default
-			&pinctrl_pwm2_default &pinctrl_pwm3_default
-			&pinctrl_pwm4_default &pinctrl_pwm5_default
-			&pinctrl_pwm6_default &pinctrl_pwm7_default
-			&pinctrl_pwm8_default &pinctrl_pwm9_default
-			&pinctrl_pwm10_default &pinctrl_pwm11_default
-			&pinctrl_pwm12_default &pinctrl_pwm13_default
-			&pinctrl_pwm14_default &pinctrl_pwm15_default>;
-
+			&pinctrl_pwm2_default &pinctrl_pwm3_default>;
 };
 
 &adc0 {
@@ -37,11 +30,7 @@
 	pinctrl-0 = <&pinctrl_tach0_default &pinctrl_tach1_default
 			&pinctrl_tach2_default &pinctrl_tach3_default
 			&pinctrl_tach4_default &pinctrl_tach5_default
-			&pinctrl_tach6_default &pinctrl_tach7_default
-			&pinctrl_tach8_default &pinctrl_tach9_default
-			&pinctrl_tach10_default &pinctrl_tach11_default
-			&pinctrl_tach12_default &pinctrl_tach13_default
-			&pinctrl_tach14_default &pinctrl_tach15_default>;
+			&pinctrl_tach6_default &pinctrl_tach7_default>;
 	fan@0 {
 		reg = <0>;
 		pulse-pr = <2>;
@@ -104,70 +93,6 @@
 		min-rpm = <1000>;
 		tach-div = <5>;
 		label = "FAN7";
-	};
-
-	fan@8 {
-		reg = <8>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN8";
-	};
-
-	fan@9 {
-		reg = <9>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN9";
-	};
-
-	fan@a {
-		reg = <0xa>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN10";
-	};
-
-	fan@b {
-		reg = <0xb>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN11";
-	};
-
-	fan@c {
-		reg = <0xc>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN12";
-	};
-
-	fan@d {
-		reg = <0xd>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN13";
-	};
-
-	fan@e {
-		reg = <0xe>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN14";
-	};
-
-	fan@f {
-		reg = <0xf>;
-		pulse-pr = <2>;
-		min-rpm = <1000>;
-		tach-div = <5>;
-		label = "FAN15";
 	};
 };
 
