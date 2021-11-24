@@ -19,4 +19,8 @@
 #define IPMB_I2C_BMC i2c_bus7
 #define I2C_BUS_NUM 10
 
+#define I2C_BUS_CPLD  i2c_bus1
+#define I2C_ADDR_CPLD  0x1e // 8-bits addr
+#define CPLD_REG_OFS_SLED_CYCLE 0x2b
+
 #endif
