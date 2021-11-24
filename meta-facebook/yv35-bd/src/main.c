@@ -16,7 +16,7 @@
 #include "ipmi.h"
 
 void device_init() {
-//  adc_init();
+  adc_init();
 }
 
 void set_sys_status() {
@@ -31,7 +31,7 @@ void main(void)
   util_init_timer();
   util_init_I2C();
 
-  //sensor_init();
+  sensor_init();
   FRU_init();
   ipmi_init();
   usb_dev_init();

@@ -29,10 +29,12 @@ snr_cfg plat_sensor_config[] = {
   {SENSOR_NUM_CUR_P12V_FAN           , type_adc       , adc_port6     , NULL                    , NULL              , stby_access      , 1     , 1     , 0      , SNR_INIT_STATUS},
 
   // medusa board
+  /*
   {SENSOR_NUM_VOL_MEDUSA_12V_IN      , type_medusa    , i2c_bus2      , medusa_addr             , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_VOL_MEDUSA_12V_OUT     , type_medusa    , i2c_bus2      , medusa_addr             , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_CUR_MEDUSA_IOUT        , type_medusa    , i2c_bus2      , medusa_addr             , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_PWR_MEDUSA_12V         , type_medusa    , i2c_bus2      , medusa_addr             , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
+  */
 
   // HSC
   {SENSOR_NUM_TEMP_HSC               , type_hsc       , i2c_bus2      , HSC_addr                , HSC_TEMP_CMD      , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
@@ -41,6 +43,7 @@ snr_cfg plat_sensor_config[] = {
   {SENSOR_NUM_PWR_HSCIN              , type_hsc       , i2c_bus2      , HSC_addr                , HSC_PWR_CMD       , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
 
   // Fan
+  /*
   {SENSOR_NUM_SINGLE_FAN_BMC_TACH_0  , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_SINGLE_FAN_BMC_TACH_1  , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_SINGLE_FAN_BMC_TACH_2  , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
@@ -53,7 +56,7 @@ snr_cfg plat_sensor_config[] = {
   {SENSOR_NUM_DUAL_FAN_BMC_TACH_1    , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_DUAL_FAN_BMC_TACH_2    , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
   {SENSOR_NUM_DUAL_FAN_BMC_TACH_3    , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
-  {SENSOR_NUM_CUR_P12V_FAN           , type_fan       , i2c_bus2      , fan_addr                , NULL              , stby_access      , 0     , 0     , 0      , SNR_INIT_STATUS},
+  */
 };
 
 bool stby_access(uint8_t snr_num) {
