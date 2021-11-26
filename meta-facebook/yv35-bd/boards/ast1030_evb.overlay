@@ -116,7 +116,7 @@
 
 &i2c6 {
 	pinctrl-0 = <&pinctrl_i2c6_default>;
-  clock-frequency = <I2C_BITRATE_FAST_PLUS>;
+	clock-frequency = <I2C_BITRATE_FAST_PLUS>;
 	status = "okay";
 
 	ipmb6: ipmb@20 {
@@ -124,13 +124,15 @@
 		reg = <0x20>;
 		label = "IPMB_6";
 		size = <10>;
+#ifdef CONFIG_I2C_IPMB_SLAVE
 		status = "okay";
+#endif
 	};
 };
 
 &i2c7 {
 	pinctrl-0 = <&pinctrl_i2c7_default>;
-  clock-frequency = <I2C_BITRATE_FAST_PLUS>;
+	clock-frequency = <I2C_BITRATE_FAST_PLUS>;
 	status = "okay";
 
 	ipmb7: ipmb@20 {

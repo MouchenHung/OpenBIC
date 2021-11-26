@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include "plat_func.h"
 #include "plat_gpio.h"
 
@@ -14,6 +15,14 @@ void ISR_post_complete() {
 
 void ISR_DC_on() {
   set_DC_status();
+}
+
+void IRS_PWROK_SLOT1() {
+  set_BIC_slot_isolated(FM_BIC_SLOT1_ISOLATED_EN_R);
+}
+
+void IRS_PWROK_SLOT3() {
+  set_BIC_slot_isolated(FM_BIC_SLOT3_ISOLATED_EN_R);
 }
 
 void set_DC_status() {
@@ -34,3 +43,11 @@ bool get_post_status() {
   return is_post_complete;
 }
 
+void set_BIC_slot_isolated(uint8_t gpio_num) {
+  int ret = 0;
+
+  ret = gpio_set(gpio_num, GPIO_HIGH);
+  if ( ret < 0 ) {
+    printk("failed to set slot isolated due to set gpio %d is failed\n", gpio_num);
+  }
+}
