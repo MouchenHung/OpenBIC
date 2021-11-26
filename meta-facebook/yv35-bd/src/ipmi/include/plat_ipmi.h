@@ -4,4 +4,8 @@
 #include "ipmi.h"
 #include "plat_ipmb.h"
 
+enum {
+   CPNT_BIC = 2,
+};
+
 #endif

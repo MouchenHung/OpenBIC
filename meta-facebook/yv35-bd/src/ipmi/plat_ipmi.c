@@ -523,3 +523,28 @@ void pal_OEM_I2C_DEV_SCAN(ipmi_msg *msg) {
   msg->completion_code = CC_SUCCESS;
   return;
 }
+
+void pal_OEM_GET_FW_VERSION(ipmi_msg *msg) {
+  if (msg->data_len != 1) {
+    msg->completion_code = CC_INVALID_LENGTH;
+    return;
+  }
+
+  uint8_t component = 0;
+  I2C_MSG i2c_msg;
+
+  component = msg->data[0];
+
+  switch (component) {
+    case CPNT_BIC:
+      msg->data[0] = FIRMWARE_REVISION_1;
+      msg->data[1] = FIRMWARE_REVISION_2;
+      msg->data_len = 2;
+      msg->completion_code = CC_SUCCESS;
+      break;
+    default:
+      msg->completion_code = CC_UNSPECIFIED_ERROR;
+      break;
+  }
+  return;
+}
