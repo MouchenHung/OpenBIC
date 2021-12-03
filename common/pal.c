@@ -191,6 +191,12 @@ __weak void pal_OEM_I2C_DEV_SCAN(ipmi_msg *msg)
 	return;
 }
 
+__weak void pal_OEM_GET_POST_CODE(ipmi_msg *msg)
+{
+    msg->completion_code = CC_UNSPECIFIED_ERROR;
+    return;
+}
+
 // init
 __weak void pal_I2C_init(void)
 {
@@ -224,6 +230,16 @@ __weak uint8_t pal_load_sdr_table(void)
 __weak bool pal_load_snr_config(void)
 {
 	return 0;
+}
+
+__weak void pal_fix_fullSDR_table(void)
+{
+    return 0;
+}
+
+__weak void pal_fix_Snrconfig(void)
+{
+    return 0;
 }
 
 // fru

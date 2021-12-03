@@ -41,6 +41,7 @@ void pal_OEM_ACCURACY_SENSNR(ipmi_msg *msg);
 void pal_OEM_GET_SET_GPIO(ipmi_msg *msg);
 void pal_OEM_SET_SYSTEM_GUID(ipmi_msg *msg);
 void pal_OEM_I2C_DEV_SCAN(ipmi_msg *msg);
+void pal_OEM_GET_POST_CODE(ipmi_msg *msg);
 
 // init
 void pal_I2C_init(void);
@@ -53,6 +54,8 @@ void pal_set_sensor_poll_interval(int *interval_ms);
 // sensor accessible
 uint8_t pal_load_sdr_table(void);
 bool pal_load_snr_config(void);
+void pal_fix_fullSDR_table(void);
+void pal_fix_Snrconfig(void);
 
 // fru
 void pal_load_fru_config(void);
