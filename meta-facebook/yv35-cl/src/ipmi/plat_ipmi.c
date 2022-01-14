@@ -1144,6 +1144,12 @@ void pal_OEM_GET_POST_CODE(ipmi_msg *msg) {
     }
     copy_snoop_read_buffer( offset, postcode_num, msg->data );
   }
+  /* reverse postcode array */
+  for (int i=0; i<(postcode_num/2); i++) {
+	  uint8_t tmp = *(msg->data + i);
+		*(msg->data + i) = *(msg->data + postcode_num - i - 1);
+		*(msg->data + postcode_num - i - 1) = tmp;
+	}
   msg->data_len = postcode_num;
   msg->completion_code = CC_SUCCESS;
   return;
